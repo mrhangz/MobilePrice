@@ -20,6 +20,7 @@
 		A86227232030083F003A357F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86227222030083F003A357F /* APIManager.swift */; };
 		A862272620300A6A003A357F /* MobileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272520300A6A003A357F /* MobileTableViewCell.swift */; };
 		A862272820300B66003A357F /* MobileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272720300B66003A357F /* MobileCellViewModel.swift */; };
+		A862272A20301B84003A357F /* MobileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272920301B84003A357F /* MobileDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A86227222030083F003A357F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A862272520300A6A003A357F /* MobileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTableViewCell.swift; sourceTree = "<group>"; };
 		A862272720300B66003A357F /* MobileCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCellViewModel.swift; sourceTree = "<group>"; };
+		A862272920301B84003A357F /* MobileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewController.swift; sourceTree = "<group>"; };
 		AD6EC352555780F0ECBD8020 /* Pods-MobilePriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilePriceTests/Pods-MobilePriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF907624E1BB825BD89A1BCC /* Pods_MobilePriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilePriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				A8622703202FED6C003A357F /* LaunchScreen.storyboard */,
 				A8622706202FED6C003A357F /* Info.plist */,
 				A862272520300A6A003A357F /* MobileTableViewCell.swift */,
+				A862272920301B84003A357F /* MobileDetailsViewController.swift */,
 			);
 			path = MobilePrice;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				A862272820300B66003A357F /* MobileCellViewModel.swift in Sources */,
 				A862271F203000F0003A357F /* Mobile.swift in Sources */,
 				A8622721203006F9003A357F /* MobileImage.swift in Sources */,
+				A862272A20301B84003A357F /* MobileDetailsViewController.swift in Sources */,
 				A86227232030083F003A357F /* APIManager.swift in Sources */,
 				A86226FD202FED6C003A357F /* MobileListViewController.swift in Sources */,
 				A86226FB202FED6C003A357F /* AppDelegate.swift in Sources */,

@@ -21,9 +21,12 @@ class MobileListViewController: UITableViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mobile = sender as? Mobile else {
+            return
+        }
+        let destinationVC = segue.destination as! MobileDetailsViewController
+        destinationVC.mobile = mobile
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,5 +38,10 @@ class MobileListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mobiles?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "MobileDetails", sender: mobiles?[indexPath.row])
+//        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

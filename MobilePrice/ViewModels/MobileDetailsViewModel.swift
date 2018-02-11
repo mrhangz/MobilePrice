@@ -7,10 +7,10 @@ class MobileDetailsViewModel {
             didSetImages?()
         }
     }
-    var apiManager: APIManager!
+    var apiManager: APIManagerProtocol!
     var didSetImages: (() -> Void)?
     
-    init(mobile: Mobile, apiManager: APIManager = APIManager()) {
+    init(mobile: Mobile, apiManager: APIManagerProtocol = APIManager()) {
         self.mobile = mobile
         self.apiManager = apiManager
         getImages()

@@ -7,6 +7,12 @@ struct MobileImage: Mappable {
     var imageURL: String?
     var id: Int?
     
+    init(mobileID: Int, imageURL: String, id: Int) {
+        self.id = id
+        self.imageURL = imageURL
+        self.mobileID = mobileID
+    }
+    
     init?(map: Map) {
         
     }

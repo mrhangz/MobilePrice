@@ -120,7 +120,6 @@
 			children = (
 				A862273220305743003A357F /* Services */,
 				A862271D203000E0003A357F /* Models */,
-				A862271A202FF43C003A357F /* Extensions */,
 				A862273120305721003A357F /* Views */,
 				A8622724203008EF003A357F /* ViewModels */,
 				A86226FA202FED6C003A357F /* AppDelegate.swift */,
@@ -139,13 +138,6 @@
 				A8622711202FED6C003A357F /* Info.plist */,
 			);
 			path = MobilePriceTests;
-			sourceTree = "<group>";
-		};
-		A862271A202FF43C003A357F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A862271D203000E0003A357F /* Models */ = {

@@ -15,7 +15,7 @@ class MobileListViewModel {
     var mobiles: [Mobile]?
     var favouriteIDs: Set<Int> = []
     var listType: ListType = .All
-    var apiManager: APIManager!
+    var apiManager: APIManagerProtocol!
     
     var displayingMobiles: [Mobile] = [Mobile]() {
         didSet {
@@ -25,7 +25,7 @@ class MobileListViewModel {
     
     var didUpdateMobiles: (() -> Void)?
     
-    init(apiManager: APIManager = APIManager.shared) {
+    init(apiManager: APIManagerProtocol = APIManager.shared) {
         self.apiManager = apiManager
         getMobiles()
     }

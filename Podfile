@@ -6,6 +6,7 @@ target 'MobilePrice' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'SwiftyJSON'
   pod 'ObjectMapper'
   pod 'SDWebImage'
 

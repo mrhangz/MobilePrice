@@ -15,6 +15,8 @@
 		A8622702202FED6C003A357F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8622701202FED6C003A357F /* Assets.xcassets */; };
 		A8622705202FED6C003A357F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8622703202FED6C003A357F /* LaunchScreen.storyboard */; };
 		A8622710202FED6C003A357F /* MobilePriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862270F202FED6C003A357F /* MobilePriceTests.swift */; };
+		A862271F203000F0003A357F /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862271E203000F0003A357F /* Mobile.swift */; };
+		A8622721203006F9003A357F /* MobileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8622720203006F9003A357F /* MobileImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		A862270B202FED6C003A357F /* MobilePriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobilePriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A862270F202FED6C003A357F /* MobilePriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePriceTests.swift; sourceTree = "<group>"; };
 		A8622711202FED6C003A357F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A862271E203000F0003A357F /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
+		A8622720203006F9003A357F /* MobileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImage.swift; sourceTree = "<group>"; };
 		AD6EC352555780F0ECBD8020 /* Pods-MobilePriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilePriceTests/Pods-MobilePriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF907624E1BB825BD89A1BCC /* Pods_MobilePriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilePriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +102,8 @@
 		A86226F9202FED6C003A357F /* MobilePrice */ = {
 			isa = PBXGroup;
 			children = (
+				A862271D203000E0003A357F /* Models */,
+				A862271A202FF43C003A357F /* Extensions */,
 				A86226FA202FED6C003A357F /* AppDelegate.swift */,
 				A86226FC202FED6C003A357F /* ViewController.swift */,
 				A86226FE202FED6C003A357F /* Main.storyboard */,
@@ -115,6 +121,22 @@
 				A8622711202FED6C003A357F /* Info.plist */,
 			);
 			path = MobilePriceTests;
+			sourceTree = "<group>";
+		};
+		A862271A202FF43C003A357F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A862271D203000E0003A357F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A862271E203000F0003A357F /* Mobile.swift */,
+				A8622720203006F9003A357F /* MobileImage.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AC5E88A3D2681EB86DE1DC6F /* Pods */ = {
@@ -276,12 +298,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,6 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A862271F203000F0003A357F /* Mobile.swift in Sources */,
+				A8622721203006F9003A357F /* MobileImage.swift in Sources */,
 				A86226FD202FED6C003A357F /* ViewController.swift in Sources */,
 				A86226FB202FED6C003A357F /* AppDelegate.swift in Sources */,
 			);

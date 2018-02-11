@@ -6,15 +6,22 @@ enum MobileSortingType {
     case rating
 }
 
+enum ListType {
+    case All
+    case Favourite
+}
+
 class MobileListViewModel {
     var mobiles: [Mobile]?
-    var favouriteIDs: [Int] = [Int]()
+    var favouriteIDs: Set<Int> = []
+    var listType: ListType = .All
+    var apiManager: APIManager!
+    
     var displayingMobiles: [Mobile] = [Mobile]() {
         didSet {
             didUpdateMobiles?()
         }
     }
-    var apiManager: APIManager!
     
     var didUpdateMobiles: (() -> Void)?
     
@@ -29,6 +36,16 @@ class MobileListViewModel {
                 self?.mobiles = mobiles
                 self?.displayingMobiles = mobiles
             }
+        }
+    }
+    
+    func changeListType(type: ListType) {
+        self.listType = type
+        switch type {
+        case .All:
+            displayingMobiles = mobiles ?? []
+        default:
+            displayingMobiles = (mobiles ?? []).filter({ favouriteIDs.contains($0.id!) })
         }
     }
     
@@ -50,11 +67,20 @@ class MobileListViewModel {
     }
     
     func addMobileToFavourite(mobileID: Int) {
-        favouriteIDs.append(mobileID)
-        print("\(favouriteIDs.count)")
+        favouriteIDs.insert(mobileID)
+    }
+    
+    func removeMobileFromFavourite(at index: Int) {
+        let id = displayingMobiles[index].id!
+        favouriteIDs.remove(id)
+        displayingMobiles.remove(at: index)
     }
     
     func isFavourite(index: Int) -> Bool {
         return favouriteIDs.contains(displayingMobiles[index].id!)
+    }
+    
+    func isFavouriteList() -> Bool {
+        return listType == .Favourite
     }
 }

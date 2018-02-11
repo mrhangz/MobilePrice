@@ -1,7 +1,9 @@
 import UIKit
 
-class MobileListViewController: UITableViewController {
-    
+class MobileListViewController: UIViewController {
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var allButton: UIButton!
+    @IBOutlet var favouriteButton: UIButton!
     var viewModel: MobileListViewModel!
     
     override func viewDidLoad() {
@@ -46,20 +48,46 @@ class MobileListViewController: UITableViewController {
         destinationVC.viewModel = destinationVM
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    @IBAction func listTypeTapped(sender: UIButton) {
+        if sender == favouriteButton {
+            favouriteButton.isSelected = true
+            allButton.isSelected = false
+            viewModel.changeListType(type: .Favourite)
+        } else {
+            favouriteButton.isSelected = false
+            allButton.isSelected = true
+            viewModel.changeListType(type: .All)
+        }
+    }
+}
+
+extension MobileListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhoneCell", for: indexPath) as! MobileTableViewCell
-        let cellViewModel = MobileCellViewModel(mobile: viewModel.displayingMobiles[indexPath.row], isFavourite: viewModel.isFavourite(index: indexPath.row))
+        let cellViewModel = MobileCellViewModel(mobile: viewModel.displayingMobiles[indexPath.row], isFavourite: viewModel.isFavourite(index: indexPath.row), hideFavourite: viewModel.isFavouriteList())
         cellViewModel.delegate = self
         cell.displayCell(viewModel: cellViewModel)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.displayingMobiles.count
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+}
+
+extension MobileListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "MobileDetails", sender: viewModel.displayingMobiles[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeMobileFromFavourite(at: indexPath.row)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return viewModel.isFavouriteList() ? .delete : .none
     }
 }
 

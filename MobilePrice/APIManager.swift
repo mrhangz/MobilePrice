@@ -26,7 +26,24 @@ class APIManager {
         }
     }
     
-    func getImages(for mobileID: Int, completion: @escaping () -> Void) {
-        
+    func getImages(for mobileID: Int, completion: @escaping ([MobileImage]?, Error?) -> Void) {
+        Alamofire.request("https://scb-test-mobile.herokuapp.com/api/mobiles/\(mobileID)/images", encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON {
+                response in
+                switch response.result {
+                case .success(let value):
+                    let array = JSON(value)
+                    var images: [MobileImage] = []
+                    for json in array.arrayValue {
+                        if let image = MobileImage(JSON: json.dictionaryObject!) {
+                            images.append(image)
+                        }
+                    }
+                    completion(images, nil)
+                case .failure(let error):
+                    completion(nil , error)
+                }
+        }
     }
 }

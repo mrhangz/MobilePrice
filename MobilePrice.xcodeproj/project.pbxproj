@@ -10,7 +10,7 @@
 		1D91C13FDB192E278727074D /* Pods_MobilePrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F33CB7142ED0C977580711 /* Pods_MobilePrice.framework */; };
 		5133AB36916DE5CA31577071 /* Pods_MobilePriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF907624E1BB825BD89A1BCC /* Pods_MobilePriceTests.framework */; };
 		A86226FB202FED6C003A357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86226FA202FED6C003A357F /* AppDelegate.swift */; };
-		A86226FD202FED6C003A357F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86226FC202FED6C003A357F /* ViewController.swift */; };
+		A86226FD202FED6C003A357F /* MobileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86226FC202FED6C003A357F /* MobileListViewController.swift */; };
 		A8622700202FED6C003A357F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86226FE202FED6C003A357F /* Main.storyboard */; };
 		A8622702202FED6C003A357F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8622701202FED6C003A357F /* Assets.xcassets */; };
 		A8622705202FED6C003A357F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8622703202FED6C003A357F /* LaunchScreen.storyboard */; };
@@ -18,6 +18,8 @@
 		A862271F203000F0003A357F /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862271E203000F0003A357F /* Mobile.swift */; };
 		A8622721203006F9003A357F /* MobileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8622720203006F9003A357F /* MobileImage.swift */; };
 		A86227232030083F003A357F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86227222030083F003A357F /* APIManager.swift */; };
+		A862272620300A6A003A357F /* MobileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272520300A6A003A357F /* MobileTableViewCell.swift */; };
+		A862272820300B66003A357F /* MobileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272720300B66003A357F /* MobileCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 		79F33CB7142ED0C977580711 /* Pods_MobilePrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilePrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86226F7202FED6C003A357F /* MobilePrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilePrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86226FA202FED6C003A357F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A86226FC202FED6C003A357F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A86226FC202FED6C003A357F /* MobileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewController.swift; sourceTree = "<group>"; };
 		A86226FF202FED6C003A357F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8622701202FED6C003A357F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8622704202FED6C003A357F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		A862271E203000F0003A357F /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
 		A8622720203006F9003A357F /* MobileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImage.swift; sourceTree = "<group>"; };
 		A86227222030083F003A357F /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A862272520300A6A003A357F /* MobileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTableViewCell.swift; sourceTree = "<group>"; };
+		A862272720300B66003A357F /* MobileCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCellViewModel.swift; sourceTree = "<group>"; };
 		AD6EC352555780F0ECBD8020 /* Pods-MobilePriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilePriceTests/Pods-MobilePriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF907624E1BB825BD89A1BCC /* Pods_MobilePriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilePriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,12 +111,14 @@
 				A86227222030083F003A357F /* APIManager.swift */,
 				A862271D203000E0003A357F /* Models */,
 				A862271A202FF43C003A357F /* Extensions */,
+				A8622724203008EF003A357F /* ViewModels */,
 				A86226FA202FED6C003A357F /* AppDelegate.swift */,
-				A86226FC202FED6C003A357F /* ViewController.swift */,
+				A86226FC202FED6C003A357F /* MobileListViewController.swift */,
 				A86226FE202FED6C003A357F /* Main.storyboard */,
 				A8622701202FED6C003A357F /* Assets.xcassets */,
 				A8622703202FED6C003A357F /* LaunchScreen.storyboard */,
 				A8622706202FED6C003A357F /* Info.plist */,
+				A862272520300A6A003A357F /* MobileTableViewCell.swift */,
 			);
 			path = MobilePrice;
 			sourceTree = "<group>";
@@ -140,6 +146,14 @@
 				A8622720203006F9003A357F /* MobileImage.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A8622724203008EF003A357F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A862272720300B66003A357F /* MobileCellViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		AC5E88A3D2681EB86DE1DC6F /* Pods */ = {
@@ -370,11 +384,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A862272820300B66003A357F /* MobileCellViewModel.swift in Sources */,
 				A862271F203000F0003A357F /* Mobile.swift in Sources */,
 				A8622721203006F9003A357F /* MobileImage.swift in Sources */,
 				A86227232030083F003A357F /* APIManager.swift in Sources */,
-				A86226FD202FED6C003A357F /* ViewController.swift in Sources */,
+				A86226FD202FED6C003A357F /* MobileListViewController.swift in Sources */,
 				A86226FB202FED6C003A357F /* AppDelegate.swift in Sources */,
+				A862272620300A6A003A357F /* MobileTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

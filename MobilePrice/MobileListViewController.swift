@@ -1,10 +1,24 @@
 import UIKit
 
-class ViewController: UITableViewController {
+class MobileListViewController: UITableViewController {
+    
+    var mobiles: [Mobile]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkText], for: UIControlState.selected)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.lightGray], for: UIControlState.normal)
+        
+        getMobiles()
+    }
+    
+    func getMobiles() {
+        APIManager.shared.getMobiles { [weak self] (mobiles, error) in
+            if let mobiles = mobiles {
+                self?.mobiles = mobiles
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -13,12 +27,13 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhoneCell", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhoneCell", for: indexPath) as! MobileTableViewCell
+        let cellViewModel = MobileCellViewModel(mobile: mobiles![indexPath.row])
+        cell.displayCell(viewModel: cellViewModel)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return mobiles?.count ?? 0
     }
 }

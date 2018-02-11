@@ -155,7 +155,7 @@ Label 2</string>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="hE2-mV-ALN">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="hE2-mV-ALN" customClass="MobileImageCollectionViewCell" customModule="MobilePrice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="17" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -173,8 +173,15 @@ Label 2</string>
                                             <constraint firstItem="fQH-3N-fdb" firstAttribute="leading" secondItem="hE2-mV-ALN" secondAttribute="leading" id="E7r-PQ-cH1"/>
                                             <constraint firstAttribute="bottom" secondItem="fQH-3N-fdb" secondAttribute="bottom" id="wFJ-G8-pyn"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="fQH-3N-fdb" id="kFG-02-A0T"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3aL-nD-pIp" id="TeH-GK-l4P"/>
+                                    <outlet property="delegate" destination="3aL-nD-pIp" id="f7Z-OM-gyG"/>
+                                </connections>
                             </collectionView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8d-11-7JT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="32"/>

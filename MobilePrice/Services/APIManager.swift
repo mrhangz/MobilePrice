@@ -2,7 +2,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class APIManager {
+protocol APIManagerProtocol {
+    func getMobiles(completion: @escaping ([Mobile]?, Error?) -> Void)
+    func getImages(for mobileID: Int, completion: @escaping ([MobileImage]?, Error?) -> Void)
+}
+
+class APIManager: APIManagerProtocol {
     static let shared: APIManager = APIManager()
     
     func getMobiles(completion: @escaping ([Mobile]?, Error?) -> Void) {

@@ -1,7 +1,6 @@
 import Foundation
 
-struct MobileImageCellViewModel {
-    
+class MobileImageCellViewModel {
     var mobileImage: MobileImage!
     var imageURL: URL?
     

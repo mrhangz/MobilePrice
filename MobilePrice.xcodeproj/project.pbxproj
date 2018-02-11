@@ -23,6 +23,8 @@
 		A862272A20301B84003A357F /* MobileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272920301B84003A357F /* MobileDetailsViewController.swift */; };
 		A862272C2030228D003A357F /* MobileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272B2030228D003A357F /* MobileImageCollectionViewCell.swift */; };
 		A862272E20302516003A357F /* MobileImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272D20302516003A357F /* MobileImageCellViewModel.swift */; };
+		A862273020304AB6003A357F /* MobileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272F20304AB6003A357F /* MobileListViewModel.swift */; };
+		A862273420305812003A357F /* MobileDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862273320305812003A357F /* MobileDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		A862272920301B84003A357F /* MobileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewController.swift; sourceTree = "<group>"; };
 		A862272B2030228D003A357F /* MobileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A862272D20302516003A357F /* MobileImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImageCellViewModel.swift; sourceTree = "<group>"; };
+		A862272F20304AB6003A357F /* MobileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewModel.swift; sourceTree = "<group>"; };
+		A862273320305812003A357F /* MobileDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewModel.swift; sourceTree = "<group>"; };
 		AD6EC352555780F0ECBD8020 /* Pods-MobilePriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilePriceTests/Pods-MobilePriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF907624E1BB825BD89A1BCC /* Pods_MobilePriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilePriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,19 +118,16 @@
 		A86226F9202FED6C003A357F /* MobilePrice */ = {
 			isa = PBXGroup;
 			children = (
-				A86227222030083F003A357F /* APIManager.swift */,
+				A862273220305743003A357F /* Services */,
 				A862271D203000E0003A357F /* Models */,
 				A862271A202FF43C003A357F /* Extensions */,
+				A862273120305721003A357F /* Views */,
 				A8622724203008EF003A357F /* ViewModels */,
 				A86226FA202FED6C003A357F /* AppDelegate.swift */,
-				A86226FC202FED6C003A357F /* MobileListViewController.swift */,
 				A86226FE202FED6C003A357F /* Main.storyboard */,
 				A8622701202FED6C003A357F /* Assets.xcassets */,
 				A8622703202FED6C003A357F /* LaunchScreen.storyboard */,
 				A8622706202FED6C003A357F /* Info.plist */,
-				A862272520300A6A003A357F /* MobileTableViewCell.swift */,
-				A862272920301B84003A357F /* MobileDetailsViewController.swift */,
-				A862272B2030228D003A357F /* MobileImageCollectionViewCell.swift */,
 			);
 			path = MobilePrice;
 			sourceTree = "<group>";
@@ -159,10 +160,31 @@
 		A8622724203008EF003A357F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A862272F20304AB6003A357F /* MobileListViewModel.swift */,
+				A862273320305812003A357F /* MobileDetailsViewModel.swift */,
 				A862272720300B66003A357F /* MobileCellViewModel.swift */,
 				A862272D20302516003A357F /* MobileImageCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A862273120305721003A357F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A86226FC202FED6C003A357F /* MobileListViewController.swift */,
+				A862272920301B84003A357F /* MobileDetailsViewController.swift */,
+				A862272520300A6A003A357F /* MobileTableViewCell.swift */,
+				A862272B2030228D003A357F /* MobileImageCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A862273220305743003A357F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A86227222030083F003A357F /* APIManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AC5E88A3D2681EB86DE1DC6F /* Pods */ = {
@@ -395,12 +417,14 @@
 			files = (
 				A862272820300B66003A357F /* MobileCellViewModel.swift in Sources */,
 				A862271F203000F0003A357F /* Mobile.swift in Sources */,
+				A862273020304AB6003A357F /* MobileListViewModel.swift in Sources */,
 				A8622721203006F9003A357F /* MobileImage.swift in Sources */,
 				A862272C2030228D003A357F /* MobileImageCollectionViewCell.swift in Sources */,
 				A862272A20301B84003A357F /* MobileDetailsViewController.swift in Sources */,
 				A86227232030083F003A357F /* APIManager.swift in Sources */,
 				A862272E20302516003A357F /* MobileImageCellViewModel.swift in Sources */,
 				A86226FD202FED6C003A357F /* MobileListViewController.swift in Sources */,
+				A862273420305812003A357F /* MobileDetailsViewModel.swift in Sources */,
 				A86226FB202FED6C003A357F /* AppDelegate.swift in Sources */,
 				A862272620300A6A003A357F /* MobileTableViewCell.swift in Sources */,
 			);

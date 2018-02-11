@@ -1,7 +1,7 @@
 import Foundation
 
-struct MobileCellViewModel {
-    
+class MobileCellViewModel {
+    weak var delegate: MobileTableViewCellDelegate?
     var mobile: Mobile!
     var imageURL: URL?
     var mobileName: String!
@@ -16,11 +16,15 @@ struct MobileCellViewModel {
         imageURL = URL(string: mobile.thumbImageURL ?? "")
         mobileName = mobile.name ?? ""
         mobileDescription = mobile.description ?? ""
-        let priceText = mobile.price != nil ? String(format: "%.02f", mobile.price!) : "-"
+        let priceText = mobile.price != nil ? String(format: "%.2f", mobile.price!) : "-"
         mobilePrice = "Price: $\(priceText)"
-        let ratingText = mobile.rating != nil ? String(format: "%.01f", mobile.rating!) : "-"
+        let ratingText = mobile.rating != nil ? String(format: "%.1f", mobile.rating!) : "-"
         mobileRating = "Rating: \(ratingText)"
         self.isFavourite = isFavourite
         self.hideFavourite = hideFavourite
+    }
+    
+    func addToFavourite() {
+        delegate?.addToFavourite(mobileID: mobile.id!)
     }
 }

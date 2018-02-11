@@ -45,56 +45,60 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig9-9G-wdt">
-                                            <rect key="frame" x="95.5" y="4" width="233.5" height="20"/>
+                                            <rect key="frame" x="95.5" y="8" width="231.5" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Xqk-XI-bfK"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLC-Ze-IXR">
-                                            <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                            <rect key="frame" x="335" y="8" width="24" height="24"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="ZUb-gP-O5z"/>
-                                                <constraint firstAttribute="height" constant="30" id="mej-gY-uMG"/>
+                                                <constraint firstAttribute="width" constant="24" id="ZUb-gP-O5z"/>
+                                                <constraint firstAttribute="height" constant="24" id="mej-gY-uMG"/>
                                             </constraints>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Button" image="star_inactive"/>
+                                            <state key="selected" image="star_active"/>
+                                            <connections>
+                                                <action selector="addToFavouriteWithSender:" destination="MlV-ms-gln" eventType="touchUpInside" id="zcC-ZE-QCg"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xW-AX-J6P">
-                                            <rect key="frame" x="95.5" y="24" width="233.5" height="41.5"/>
+                                            <rect key="frame" x="95.5" y="28" width="231.5" height="37.5"/>
                                             <string key="text">Label
 Label 2</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-HF-zIt">
-                                            <rect key="frame" x="96" y="65.5" width="139" height="20"/>
+                                            <rect key="frame" x="96" y="65.5" width="155" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="sKx-ZN-L3I"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: 5.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxf-Xa-hN4">
-                                            <rect key="frame" x="243" y="65.5" width="100" height="20"/>
+                                            <rect key="frame" x="259" y="65.5" width="84" height="20"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="J7M-gD-J8G"/>
+                                                <constraint firstAttribute="width" constant="84" id="J7M-gD-J8G"/>
                                                 <constraint firstAttribute="height" constant="20" id="vgd-VM-fMe"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="rLC-Ze-IXR" firstAttribute="leading" secondItem="2xW-AX-J6P" secondAttribute="trailing" constant="8" id="0zh-fu-J1Y"/>
                                         <constraint firstItem="yf1-oh-Zur" firstAttribute="centerY" secondItem="uKD-3M-Tyk" secondAttribute="centerY" id="40H-vY-Cx1"/>
-                                        <constraint firstItem="ig9-9G-wdt" firstAttribute="top" secondItem="uKD-3M-Tyk" secondAttribute="top" constant="4" id="485-jJ-Vh0"/>
+                                        <constraint firstItem="ig9-9G-wdt" firstAttribute="top" secondItem="uKD-3M-Tyk" secondAttribute="top" constant="8" id="485-jJ-Vh0"/>
                                         <constraint firstItem="yf1-oh-Zur" firstAttribute="leading" secondItem="uKD-3M-Tyk" secondAttribute="leading" constant="8" id="FuX-I4-N1K"/>
-                                        <constraint firstAttribute="trailing" secondItem="rLC-Ze-IXR" secondAttribute="trailing" constant="8" id="IA4-do-aSq"/>
+                                        <constraint firstAttribute="trailing" secondItem="rLC-Ze-IXR" secondAttribute="trailing" constant="16" id="IA4-do-aSq"/>
                                         <constraint firstItem="Nxf-Xa-hN4" firstAttribute="leading" secondItem="2e7-HF-zIt" secondAttribute="trailing" constant="8" id="IKF-zb-GGT"/>
                                         <constraint firstItem="Nxf-Xa-hN4" firstAttribute="bottom" secondItem="uKD-3M-Tyk" secondAttribute="bottomMargin" id="IRl-Su-lFe"/>
                                         <constraint firstItem="rLC-Ze-IXR" firstAttribute="top" secondItem="uKD-3M-Tyk" secondAttribute="top" constant="8" id="Nlv-DQ-lEr"/>
@@ -127,7 +131,11 @@ Label 2</string>
                     </tableView>
                     <navigationItem key="navigationItem" id="yvw-rd-Vx4">
                         <barButtonItem key="backBarButtonItem" title=" " id="yPF-5A-wlR"/>
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="OgQ-sb-4wO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="OgQ-sb-4wO">
+                            <connections>
+                                <action selector="sortTappedWithSender:" destination="1J7-Yh-cBd" id="kCi-Yo-u0x"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="3aL-nD-pIp" kind="show" identifier="MobileDetails" id="QhK-Xh-DhS"/>
@@ -265,4 +273,8 @@ Label 2</string>
             <point key="canvasLocation" x="-265" y="119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star_active" width="24" height="24"/>
+        <image name="star_inactive" width="24" height="24"/>
+    </resources>
 </document>

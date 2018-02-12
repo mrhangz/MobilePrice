@@ -25,6 +25,7 @@
 		A862272E20302516003A357F /* MobileImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272D20302516003A357F /* MobileImageCellViewModel.swift */; };
 		A862273020304AB6003A357F /* MobileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862272F20304AB6003A357F /* MobileListViewModel.swift */; };
 		A862273420305812003A357F /* MobileDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A862273320305812003A357F /* MobileDetailsViewModel.swift */; };
+		A875323A2031DBEE003EB26A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87532392031DBEE003EB26A /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A862272D20302516003A357F /* MobileImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileImageCellViewModel.swift; sourceTree = "<group>"; };
 		A862272F20304AB6003A357F /* MobileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileListViewModel.swift; sourceTree = "<group>"; };
 		A862273320305812003A357F /* MobileDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDetailsViewModel.swift; sourceTree = "<group>"; };
+		A87532392031DBEE003EB26A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AD6EC352555780F0ECBD8020 /* Pods-MobilePriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilePriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobilePriceTests/Pods-MobilePriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF907624E1BB825BD89A1BCC /* Pods_MobilePriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilePriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				A86227222030083F003A357F /* APIManager.swift */,
+				A87532392031DBEE003EB26A /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				A86226FD202FED6C003A357F /* MobileListViewController.swift in Sources */,
 				A862273420305812003A357F /* MobileDetailsViewModel.swift in Sources */,
 				A86226FB202FED6C003A357F /* AppDelegate.swift in Sources */,
+				A875323A2031DBEE003EB26A /* DataManager.swift in Sources */,
 				A862272620300A6A003A357F /* MobileTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,7 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9T93B6TD9Q;
+				DEVELOPMENT_TEAM = KWT52B2348;
 				INFOPLIST_FILE = MobilePrice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -590,7 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9T93B6TD9Q;
+				DEVELOPMENT_TEAM = KWT52B2348;
 				INFOPLIST_FILE = MobilePrice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -13,9 +13,10 @@ enum ListType {
 
 class MobileListViewModel {
     var mobiles: [Mobile]?
-    var favouriteIDs: Set<Int> = []
+    var favouriteIDs: Set<Int>!
     var listType: ListType = .All
     var apiManager: APIManagerProtocol!
+    var dataManager: DataManagerProtocol!
     
     var displayingMobiles: [Mobile] = [Mobile]() {
         didSet {
@@ -25,9 +26,17 @@ class MobileListViewModel {
     
     var didUpdateMobiles: (() -> Void)?
     
-    init(apiManager: APIManagerProtocol = APIManager.shared) {
+    init(apiManager: APIManagerProtocol = APIManager.shared, dataManager: DataManagerProtocol = DataManager.shared) {
         self.apiManager = apiManager
+        self.dataManager = dataManager
+        getFavourites()
         getMobiles()
+    }
+    
+    func getFavourites() {
+        dataManager.getFavourites { [weak self] (favourites) in
+            self?.favouriteIDs = favourites
+        }
     }
     
     func getMobiles() {
@@ -68,12 +77,14 @@ class MobileListViewModel {
     
     func addMobileToFavourite(mobileID: Int) {
         favouriteIDs.insert(mobileID)
+        dataManager.setFavourites(favourites: favouriteIDs)
     }
     
     func removeMobileFromFavourite(at index: Int) {
         let id = displayingMobiles[index].id!
         favouriteIDs.remove(id)
         displayingMobiles.remove(at: index)
+        dataManager.setFavourites(favourites: favouriteIDs)
     }
     
     func isFavourite(index: Int) -> Bool {

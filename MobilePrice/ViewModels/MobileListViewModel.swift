@@ -25,6 +25,7 @@ class MobileListViewModel {
     }
     
     var didUpdateMobiles: (() -> Void)?
+    var displayMessage: ((String, String) -> Void)?
     
     init(apiManager: APIManagerProtocol = APIManager.shared, dataManager: DataManagerProtocol = DataManager.shared) {
         self.apiManager = apiManager
@@ -44,6 +45,8 @@ class MobileListViewModel {
             if let mobiles = mobiles {
                 self?.mobiles = mobiles
                 self?.displayingMobiles = mobiles
+            } else {
+                self?.displayMessage?("Sorry", "Something went wrong. Please try again.")
             }
         }
     }

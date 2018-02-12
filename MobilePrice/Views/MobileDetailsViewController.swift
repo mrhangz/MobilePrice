@@ -17,6 +17,16 @@ class MobileDetailsViewController: UIViewController {
         viewModel.didSetImages = { [weak self] in
             self?.collectionView.reloadData()
         }
+        viewModel.displayMessage = { [weak self] title, subtitle in
+            self?.displayMessage(title: title, subtitle: subtitle)
+            self?.collectionView.backgroundColor = UIColor.lightGray
+        }
+    }
+    
+    private func displayMessage(title: String, subtitle: String) {
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 

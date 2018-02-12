@@ -15,6 +15,15 @@ class MobileListViewController: UIViewController {
         viewModel.didUpdateMobiles = { [weak self] in
             self?.tableView.reloadData()
         }
+        viewModel.displayMessage = { [weak self] title, subtitle in
+            self?.displayMessage(title: title, subtitle: subtitle)
+        }
+    }
+    
+    private func displayMessage(title: String, subtitle: String) {
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
     
     @IBAction func sortTapped(sender: UIBarButtonItem) {

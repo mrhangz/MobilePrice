@@ -9,6 +9,7 @@ class MobileDetailsViewModel {
     }
     var apiManager: APIManagerProtocol!
     var didSetImages: (() -> Void)?
+    var displayMessage: ((String, String) -> Void)?
     
     init(mobile: Mobile, apiManager: APIManagerProtocol = APIManager()) {
         self.mobile = mobile
@@ -20,6 +21,8 @@ class MobileDetailsViewModel {
         apiManager.getImages(for: mobile.id!) { [weak self] (images, error) in
             if let images = images {
                 self?.mobileImages = images
+            } else {
+                self?.displayMessage?("Sorry", "Couldn't get images. Please try again.")
             }
         }
     }

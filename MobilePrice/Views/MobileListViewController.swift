@@ -4,20 +4,27 @@ class MobileListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var allButton: UIButton!
     @IBOutlet var favouriteButton: UIButton!
+    
     var viewModel: MobileListViewModel!
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkText], for: UIControlState.selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.lightGray], for: UIControlState.normal)
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         viewModel = MobileListViewModel()
         viewModel.didUpdateMobiles = { [weak self] in
             self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }
         viewModel.displayMessage = { [weak self] title, subtitle in
             self?.displayMessage(title: title, subtitle: subtitle)
         }
+    }
+    
+    @objc private func refresh() {
+        viewModel?.getMobiles()
     }
     
     private func displayMessage(title: String, subtitle: String) {
@@ -62,10 +69,12 @@ class MobileListViewController: UIViewController {
             favouriteButton.isSelected = true
             allButton.isSelected = false
             viewModel.changeListType(type: .Favourite)
+            tableView.refreshControl = nil
         } else {
             favouriteButton.isSelected = false
             allButton.isSelected = true
             viewModel.changeListType(type: .All)
+            tableView.refreshControl = refreshControl
         }
     }
 }
